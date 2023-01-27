@@ -31,43 +31,6 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 REPO="https://raw.githubusercontent.com/inoyaksorojawi/copas/master/"
 APT="apt-get -y install "
 domain=$(cat /root/domain)
-start=$(date +%s)
-secs_to_human() {
-    echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's $((${1} % 60)) seconds"
-}
-### Status
-function print_ok() {
-    echo -e "${OK} ${BLUE} $1 ${FONT}"
-}
-function print_install() {
-	echo -e "${YELLOW} ============================================ ${FONT}"
-    echo -e "${YELLOW} # $1 ${FONT}"
-	echo -e "${YELLOW} ============================================ ${FONT}"
-    sleep 1
-}
-
-function print_error() {
-    echo -e "${ERROR} ${REDBG} $1 ${FONT}"
-}
-
-function print_success() {
-    if [[ 0 -eq $? ]]; then
-		echo -e "${Green} ============================================ ${FONT}"
-        echo -e "${Green} # $1 berhasil dipasang"
-		echo -e "${Green} ============================================ ${FONT}"
-        sleep 2
-    fi
-}
-
-### Cek root
-function is_root() {
-    if [[ 0 == "$UID" ]]; then
-        print_ok "Root user Start installation process"
-    else
-        print_error "The current user is not the root user, please switch to the root user and run the script again"
-    fi
-
-}
 
 ### Change Environment System
 function first_setup(){
@@ -352,9 +315,9 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user taibabihutan17@gmail.com
-from taibabihutan17@gmail.com
-password romanisti
+user djarumpentol01@gmail.com
+from djarumpentol01@gmail.com
+password jagalisdead
 logfile ~/.msmtp.log
 
 EOF
